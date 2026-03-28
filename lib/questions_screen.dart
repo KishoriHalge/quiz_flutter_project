@@ -25,24 +25,26 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
     var currentQuestion = dataList[currentIndex];
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          currentQuestion.question,
-          style: GoogleFonts.lato(fontSize: 24, color: Colors.white),
-          textAlign: TextAlign.center,
-        ),
-        SizedBox(height: 30,),
-        ...currentQuestion.getSuffledAnswers().map((answer) {
-          return AnswerButton(
-            answer: answer,
-            onTap: () {
-              answerQuestion(answer);
-            },
-          );
-        }),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            currentQuestion.question,
+            style: GoogleFonts.lato(fontSize: 24, color: Colors.black),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 30,),
+          ...currentQuestion.getSuffledAnswers().map((answer) {
+            return AnswerButton(
+              answer: answer,
+              onTap: () {
+                answerQuestion(answer);
+              },
+            );
+          }),
+        ],
+      ),
     );
   }
 }

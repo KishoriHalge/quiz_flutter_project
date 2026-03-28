@@ -13,17 +13,21 @@ class StartScreen extends StatelessWidget {
       children: [
         Text(
           'Flutter Quiz',
-          style: GoogleFonts.lato(fontSize: 30, color: Colors.white),
+          style: GoogleFonts.lato(fontSize: 30, color: Colors.blueAccent),
         ),
-        SizedBox(height: 30),
-        Image.asset('assets/images/quiz.png', width: 200),
-        SizedBox(height: 50),
+        SizedBox(height: 80),
+        Image.asset(
+          'assets/images/quiz.png',
+          width: 200,
+
+        ),
+        SizedBox(height: 120),
         OutlinedButton.icon(
           icon: Icon(Icons.arrow_forward),
           style: OutlinedButton.styleFrom(
             foregroundColor: Colors.white,
             backgroundColor: Colors.blue,
-            padding: EdgeInsets.symmetric(horizontal: 40,vertical: 10)
+            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
           ),
 
           onPressed: startQuiz,
